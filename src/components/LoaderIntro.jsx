@@ -10,26 +10,6 @@ export default function LoaderIntro({ onFinish }) {
   const [fade, setFade] = useState(false);
 
   useEffect(() => {
-    const resetScroll = () => {
-      document.body.style.overflow = "";
-      document.documentElement.style.overflow = "";
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.width = "";
-    };
-
-    document.body.style.overflow = "hidden";
-    document.documentElement.style.overflow = "hidden";
-    document.body.style.position = "fixed";
-    document.body.style.top = "0";
-    document.body.style.width = "100%";
-
-    return () => {
-      resetScroll();
-    };
-  }, []);
-
-  useEffect(() => {
     const TOTAL = 5000;
     const FADE_DURATION = 1200;
     const PAUSE_AFTER_TYPING = 1800;
@@ -59,11 +39,6 @@ export default function LoaderIntro({ onFinish }) {
     }, TOTAL - FADE_DURATION);
 
     finishTimer = window.setTimeout(() => {
-      document.body.style.overflow = "";
-      document.documentElement.style.overflow = "";
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.width = "";
       onFinish?.();
     }, TOTAL);
 

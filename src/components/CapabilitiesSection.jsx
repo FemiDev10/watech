@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import "./CapabilitiesSection.css";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import Reveal from "./Reveal";
 import marineNavSupport from "../assets/marine-nav-support.png";
 import offshoreTechnicalSupport from "../assets/offshore-technical-support.png";
 import electronicSystemsNav from "../assets/electronic-systems-nav.png";
-import viewMoreIcon from "../assets/view-more-icon.png";
 
 const CARDS = [
   {
@@ -35,11 +35,11 @@ const CARDS = [
 ];
 
 const CapabilitiesSection = () => {
-  const [expanded, setExpanded] = useState(false);
-  const visibleCards = expanded ? CARDS : CARDS.slice(0, 3);
+  const navigate = useNavigate();
+  const visibleCards = CARDS;
 
   return (
-    <section className="capabilities">
+    <section className="capabilities" id="capabilities">
       <div className="capabilities__inner">
         <Reveal>
           <div className="capabilities__header">
@@ -58,10 +58,9 @@ const CapabilitiesSection = () => {
               <button
                 type="button"
                 className="capabilities__button"
-                onClick={() => setExpanded((prev) => !prev)}
+                onClick={() => navigate("/facilities")}
               >
-                <span>{expanded ? "View Less" : "View More"}</span>
-                <img src={viewMoreIcon} alt="" className="capabilities__button-icon" />
+                <span>View our facilities</span>
               </button>
             </div>
           </div>

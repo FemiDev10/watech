@@ -1,0 +1,72 @@
+.facilities-page {
+  background: #ffffff;
+  padding: 96px 24px 80px;
+}
+
+.facilities-page__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.facilities-page__header {
+  margin-bottom: 32px;
+}
+
+.facilities-page__title {
+  margin: 0 0 10px;
+  font-size: clamp(32px, 4vw, 46px);
+  font-weight: 700;
+  color: #111111;
+}
+
+.facilities-page__subtitle {
+  margin: 0;
+  font-size: 16px;
+  color: #616161;
+  max-width: 640px;
+}
+
+.facilities-page__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.facilities-page__tile {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #f4f4f4;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  aspect-ratio: 4 / 3;
+}
+
+.facilities-page__tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+@media (max-width: 1024px) {
+  .facilities-page__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .facilities-page__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .facilities-page {
+    padding: 80px 20px 64px;
+  }
+
+  .facilities-page__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

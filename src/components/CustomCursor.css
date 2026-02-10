@@ -1,7 +1,6 @@
 @media (hover: hover) and (pointer: fine) {
-  html,
-  body,
-  * {
+  body.use-custom-cursor,
+  body.use-custom-cursor * {
     cursor: none !important;
   }
 }

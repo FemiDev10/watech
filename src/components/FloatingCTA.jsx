@@ -1,9 +1,11 @@
 import React, { useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import "./FloatingCTA.css";
 
 const FloatingCTA = () => {
   const ctaRef = useRef(null);
   const linkRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const cta = ctaRef.current;
@@ -93,12 +95,7 @@ const FloatingCTA = () => {
 
   const handleClick = (event) => {
     event.preventDefault();
-    const target = document.getElementById("faqs");
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
-    } else {
-      window.location.hash = "#faqs";
-    }
+    navigate("/quote");
   };
 
   const ShipIcon = () => (

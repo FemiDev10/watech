@@ -1,9 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import "./Hero.css";
 import avatar from "../assets/avatar.png";
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="hero" id="hero">
       <div className="hero__overlay" />
@@ -32,8 +35,9 @@ const Hero = () => {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+            onClick={() => navigate("/quote")}
           >
-            Get a Free Quote
+            Request a Quote
           </motion.button>
         </div>
         <motion.div

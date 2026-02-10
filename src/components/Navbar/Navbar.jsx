@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
-import logo from "../../assets/logowhite.png";
+import logoDark from "../../assets/logo.png";
 
 const LINKS = [
   { label: "Home", href: "#hero" },
@@ -11,6 +12,7 @@ const LINKS = [
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleToggle = () => {
     setIsMenuOpen((prev) => !prev);
@@ -23,9 +25,13 @@ const Navbar = () => {
   return (
     <header className="navbar">
       <div className="navbar__inner">
-        <div className="navbar__brand">
-          <img src={logo} alt="Watech Links Limited" className="navbar__logo" />
-        </div>
+        <Link to="/" className="navbar__brand">
+          <img
+            src={logoDark}
+            alt="Watech Links Limited"
+            className="navbar__logo"
+          />
+        </Link>
 
         <nav className="navbar__links">
           {LINKS.map((link) => (
@@ -35,8 +41,12 @@ const Navbar = () => {
           ))}
         </nav>
 
-        <button type="button" className="navbar__cta">
-          Request a Quote
+        <button
+          type="button"
+          className="navbar__cta"
+          onClick={() => navigate("/contact")}
+        >
+          Contact Us
         </button>
 
         {!isMenuOpen && (
@@ -58,9 +68,13 @@ const Navbar = () => {
         className={`navbar__menu${isMenuOpen ? " navbar__menu--open" : ""}`}
       >
         <div className="navbar__menu-header">
-          <div className="navbar__menu-brand">
-            <img src={logo} alt="Watech Links Limited" className="navbar__logo" />
-          </div>
+          <Link to="/" className="navbar__menu-brand" onClick={handleClose}>
+            <img
+              src={logoDark}
+              alt="Watech Links Limited"
+              className="navbar__logo"
+            />
+          </Link>
           <button
             type="button"
             className="navbar__close"
@@ -80,8 +94,15 @@ const Navbar = () => {
             {link.label}
           </a>
         ))}
-        <button type="button" className="navbar__menu-cta" onClick={handleClose}>
-          Request a Quote
+        <button
+          type="button"
+          className="navbar__menu-cta"
+          onClick={() => {
+            navigate("/contact");
+            handleClose();
+          }}
+        >
+          Contact Us
         </button>
       </div>
     </header>

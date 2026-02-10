@@ -23,23 +23,28 @@ const Footer = () => {
             <h4 className="footer__heading">Quick Links</h4>
             <ul className="footer__links">
               <li>
-                <a href="#" className="footer__link">
+                <a href="#hero" className="footer__link">
                   Home
                 </a>
               </li>
               <li>
-                <a href="#" className="footer__link">
+                <a href="#services" className="footer__link">
                   Services
                 </a>
               </li>
               <li>
-                <a href="#" className="footer__link">
+                <a href="#systems" className="footer__link">
                   Systems
                 </a>
               </li>
               <li>
-                <a href="#" className="footer__link">
+                <a href="#capabilities" className="footer__link">
                   Capabilities
+                </a>
+              </li>
+              <li>
+                <a href="/contact" className="footer__link">
+                  Contact Us
                 </a>
               </li>
             </ul>

@@ -31,11 +31,13 @@
 
 .catalogue__tabs {
   display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
+  flex-wrap: nowrap;
+  gap: 16px;
   border-bottom: 1px solid rgba(109, 113, 127, 0.35);
-  padding-bottom: 12px;
+  padding-bottom: 8px;
   margin-bottom: 28px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .catalogue__tab {
@@ -47,6 +49,8 @@
   font-weight: 500;
   color: #555555;
   cursor: pointer;
+  white-space: nowrap;
+  flex: 0 0 auto;
 }
 
 .catalogue__tab:focus {

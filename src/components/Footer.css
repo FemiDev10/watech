@@ -16,12 +16,14 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 32px;
+  align-items: start;
 }
 
 .footer__brand {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  max-width: 320px;
 }
 
 .footer__logo {
@@ -56,6 +58,7 @@
   color: var(--text-muted);
   text-decoration: none;
   font-size: 14px;
+  line-height: 1.6;
 }
 
 .footer__info {
@@ -83,6 +86,7 @@
   display: flex;
   gap: 12px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .footer__icon {
@@ -100,6 +104,7 @@
 @media (max-width: 900px) {
   .footer__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
   }
 }
 
@@ -110,5 +115,14 @@
 
   .footer__grid {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .footer__brand {
+    max-width: none;
+  }
+
+  .footer__bottom {
+    margin-top: 32px;
   }
 }

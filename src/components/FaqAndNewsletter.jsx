@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./FaqAndNewsletter.css";
 import viewMoreIcon from "../assets/view-more-icon.png";
 import goIcon from "../assets/goicon.png";
 import handsImage from "../assets/hands.png";
 import Reveal from "./Reveal";
+import { AnimatePresence, motion } from "framer-motion";
 
 const FAQS = [
   {
@@ -46,6 +47,8 @@ const FAQS = [
 const FaqAndNewsletter = () => {
   const [openIndex, setOpenIndex] = useState(0);
   const [showAll, setShowAll] = useState(false);
+  const [newsletterEmail, setNewsletterEmail] = useState("femijude10@gmail.com");
+  const [newsletterSuccess, setNewsletterSuccess] = useState(false);
 
   const handleToggle = (index) => {
     setOpenIndex((prev) => (prev === index ? -1 : index));
@@ -62,6 +65,12 @@ const FaqAndNewsletter = () => {
   };
 
   const visibleFaqs = showAll ? FAQS : FAQS.slice(0, 4);
+
+  useEffect(() => {
+    if (!newsletterSuccess) return;
+    const timer = setTimeout(() => setNewsletterSuccess(false), 2500);
+    return () => clearTimeout(timer);
+  }, [newsletterSuccess]);
 
   return (
     <section className="faq-newsletter" id="faqs">
@@ -127,16 +136,24 @@ const FaqAndNewsletter = () => {
             <h2 className="newsletter__title">
               Let us Help You Build a Safer, Stronger Future.
             </h2>
-            <div className="newsletter__input-wrap">
+            <form
+              className="newsletter__input-wrap"
+              onSubmit={(event) => {
+                event.preventDefault();
+                setNewsletterSuccess(true);
+              }}
+            >
               <input
                 type="email"
                 className="newsletter__input"
+                value={newsletterEmail}
+                onChange={(event) => setNewsletterEmail(event.target.value)}
                 placeholder="Enter your email..."
               />
-              <button type="button" className="newsletter__submit">
+              <button type="submit" className="newsletter__submit">
                 <img src={goIcon} alt="Submit" />
               </button>
-            </div>
+            </form>
           </div>
           <div className="newsletter__image">
             <img src={handsImage} alt="Hands" />
@@ -144,6 +161,30 @@ const FaqAndNewsletter = () => {
           </div>
         </Reveal>
       </div>
+
+      <AnimatePresence>
+        {newsletterSuccess ? (
+          <motion.div
+            className="newsletter-modal"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div
+              className="newsletter-modal__panel"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+            >
+              <div className="newsletter-modal__check">
+                <span />
+              </div>
+              <h3>You&apos;re subscribed!</h3>
+              <p>Updates will be sent to femijude10@gmail.com</p>
+            </motion.div>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
     </section>
   );
 };

@@ -1,9 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./FloatingQuoteCta.css";
 
 const FloatingQuoteCta = () => {
   const [isCompact, setIsCompact] = useState(false);
   const lastScrollY = useRef(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     lastScrollY.current = window.scrollY || 0;
@@ -20,14 +22,7 @@ const FloatingQuoteCta = () => {
   }, []);
 
   const handleClick = () => {
-    const target =
-      document.getElementById("request-quote") ||
-      document.querySelector('[data-quote-target="true"]');
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
-      return;
-    }
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    navigate("/contact");
   };
 
   return (
@@ -35,9 +30,9 @@ const FloatingQuoteCta = () => {
       type="button"
       className={`floating-quote${isCompact ? " is-compact" : ""}`}
       onClick={handleClick}
-      aria-label="Request a Quote"
+      aria-label="Contact Us"
     >
-      Request a Quote
+      Contact Us
     </button>
   );
 };
