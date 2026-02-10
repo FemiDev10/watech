@@ -1,0 +1,97 @@
+/* Loader must cover the entire app no matter what */
+.loaderIntro {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+
+  /* IMPORTANT: solid dark background */
+  background: #0b0b0b;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 1;
+  transition: opacity 1.2s ease-in-out;
+}
+
+/* when we start fading out */
+.loaderIntro--fade {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loaderIntro__inner {
+  text-align: center;
+  padding: 0 24px;
+}
+
+.loaderIntro__title {
+  color: #ffffff;
+  font-family:
+    "Manrope",
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Arial,
+    sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  font-size: clamp(22px, 3vw, 40px);
+}
+
+.loaderIntro__subtitle {
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  font-family:
+    "Manrope",
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Arial,
+    sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  font-size: clamp(12px, 1.4vw, 14px);
+}
+
+/* progress bar */
+.loaderIntro__barWrap {
+  position: fixed;
+  left: 32px;
+  right: 32px;
+  bottom: 28px;
+}
+
+.loaderIntro__barTrack {
+  height: 3px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+}
+
+.loaderIntro__barFill {
+  height: 100%;
+  width: 0%;
+  background: #ffffff;
+  transition: width 120ms linear;
+}
+
+.loaderIntro__percent {
+  margin-top: 10px;
+  text-align: right;
+  font-family:
+    "Manrope",
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.55);
+}
