@@ -63,26 +63,6 @@
   line-height: 1.6;
 }
 
-.testimonials__button {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  align-self: flex-start;
-  border: none;
-  background: #111111;
-  color: #ffffff;
-  padding: 10px 20px;
-  border-radius: 999px;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.testimonials__button-icon {
-  width: 16px;
-  height: 16px;
-}
-
 .testimonials__grid {
   display: grid;
   gap: 20px;
@@ -101,10 +81,10 @@
 
 .testimonials__quote {
   margin: 0;
-  font-size: 24px;
+  font-size: clamp(16px, 1.2vw, 20px);
   font-weight: 400;
   color: #111111;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .testimonials__person {

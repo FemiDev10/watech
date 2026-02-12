@@ -5,28 +5,30 @@ import Reveal from "./Reveal";
 import test1 from "../assets/test/test1.png";
 import test2 from "../assets/test/test2.png";
 import test3 from "../assets/test/test3.png";
-import viewMoreIcon from "../assets/view-more-icon.png";
 
 const TESTIMONIALS = [
   {
     quote:
-      "Their team helped us customize a plan that fits our growing business. Filing a claim was quick and seamless.",
-    name: "Nina Hartanto",
-    role: "CEO TranzGlobal",
+      "Watech Links delivered beyond expectations. During our vessel drydock period, their team handled the navigation systems upgrade and GMDSS compliance with impressive precision. Downtime was minimized and documentation was handled professionally. We now rely on them as our go-to technical partner.",
+    name: "Engr. Tunde Okafor",
+    role: "Fleet Technical Superintendent",
+    company: "Atlantic Marine Logistics Ltd.",
     avatar: test1,
   },
   {
     quote:
-      "They understood the complexities of our tech startup and gave us peace of mind from day one.",
-    name: "Rama Kusuma",
-    role: "Co-Founder BitHive",
+      "From radar calibration to offshore communications support, Watech’s engineers demonstrated deep technical expertise and quick response time. Their ability to troubleshoot complex electronic faults offshore saved us significant operational costs.",
+    name: "Capt. Ibrahim Hassan",
+    role: "Marine Operations Manager",
+    company: "BlueWave Offshore Services",
     avatar: test2,
   },
   {
     quote:
-      "We’ve been with them for 5 years. Their service is top notch and always ready when we need support.",
-    name: "Dewi Ananda",
-    role: "Director of Operations",
+      "Safety compliance is critical in our operations, and Watech’s support during our life-saving appliances inspection and safety radio survey was thorough and well-documented. Their professionalism and structured reporting process gave us confidence during regulatory audits.",
+    name: "Mrs. Adaeze Nwosu",
+    role: "HSE & Compliance Lead",
+    company: "TransOcean Energy Support",
     avatar: test3,
   },
 ];
@@ -43,12 +45,8 @@ const TestimonialsSection = () => {
             </div>
             <div className="testimonials__header-right">
               <p className="testimonials__text">
-                Hear from companies that trust us to keep their operations secure.
+                Hear from operations teams that trust Watech to deliver in the field.
               </p>
-              <button type="button" className="testimonials__button">
-                <span>View More</span>
-                <img src={viewMoreIcon} alt="" className="testimonials__button-icon" />
-              </button>
             </div>
           </div>
         </Reveal>
@@ -89,7 +87,11 @@ const TestimonialsSection = () => {
                 />
                 <div className="testimonials__person-meta">
                   <div className="testimonials__name">{item.name}</div>
-                  <div className="testimonials__role">{item.role}</div>
+                  <div className="testimonials__role">
+                    {item.role}
+                    {" | "}
+                    {item.company}
+                  </div>
                 </div>
               </div>
             </motion.article>
