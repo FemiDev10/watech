@@ -6,6 +6,9 @@ import Reveal from "./Reveal";
 import marineNavSupport from "../assets/marine-nav-support.png";
 import offshoreTechnicalSupport from "../assets/offshore-technical-support.png";
 import electronicSystemsNav from "../assets/electronic-systems-nav.png";
+import equipmentServicing from "../assets/capabilities/equipment_servicing.png";
+import offshoreOperations from "../assets/capabilities/offshore_operations.png";
+import inspectionFieldWork from "../assets/capabilities/Overlay.png";
 
 const CARDS = [
   {
@@ -21,16 +24,16 @@ const CARDS = [
     label: "Electronic Systems Installation",
   },
   {
-    image: marineNavSupport,
-    label: "System Calibration & Testing",
+    image: equipmentServicing,
+    label: "Equipment Servicing & Maintenance",
   },
   {
-    image: offshoreTechnicalSupport,
-    label: "Onboard Maintenance Support",
+    image: offshoreOperations,
+    label: "Offshore Operations Support",
   },
   {
-    image: electronicSystemsNav,
-    label: "Electronics Upgrade Supervision",
+    image: inspectionFieldWork,
+    label: "Inspection & Field Work",
   },
 ];
 
@@ -44,23 +47,20 @@ const CapabilitiesSection = () => {
         <Reveal>
           <div className="capabilities__header">
             <div className="capabilities__header-left">
-              <span className="capabilities__eyebrow">Our Capabilities</span>
-              <h2 className="capabilities__title">
-                Built for mission-critical marine and offshore operations
-              </h2>
+              <span className="capabilities__eyebrow">IN THE FIELD</span>
+              <h2 className="capabilities__title">Explore Our Work</h2>
             </div>
             <div className="capabilities__header-right">
               <p className="capabilities__text">
-                Hands-on technical expertise supporting navigation, communication,
-                safety, and positioning systems in demanding offshore and coastal
-                environments.
+                Highlights from offshore operations, equipment servicing,
+                installations, and field support delivered by our team.
               </p>
               <button
                 type="button"
                 className="capabilities__button"
-                onClick={() => navigate("/facilities")}
+                onClick={() => navigate("/work")}
               >
-                <span>View our facilities</span>
+                <span>View Photos</span>
               </button>
             </div>
           </div>

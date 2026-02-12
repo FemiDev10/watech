@@ -1,18 +1,19 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import logoDark from "../../assets/logo.png";
 
 const LINKS = [
-  { label: "Home", href: "#hero" },
-  { label: "Services", href: "#services" },
-  { label: "Systems", href: "#systems" },
-  { label: "FAQs", href: "#faqs" },
+  { label: "Home", sectionId: "hero" },
+  { label: "Services", sectionId: "services" },
+  { label: "Systems", sectionId: "systems" },
+  { label: "FAQs", sectionId: "faqs" },
 ];
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleToggle = () => {
     setIsMenuOpen((prev) => !prev);
@@ -20,6 +21,22 @@ const Navbar = () => {
 
   const handleClose = () => {
     setIsMenuOpen(false);
+  };
+
+  const scrollToSection = (sectionId) => {
+    const target = document.getElementById(sectionId);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  const goToSection = (sectionId) => {
+    if (location.pathname !== "/") {
+      navigate("/");
+      window.setTimeout(() => scrollToSection(sectionId), 80);
+      return;
+    }
+    scrollToSection(sectionId);
   };
 
   return (
@@ -35,7 +52,15 @@ const Navbar = () => {
 
         <nav className="navbar__links">
           {LINKS.map((link) => (
-            <a key={link.label} href={link.href} className="navbar__link">
+            <a
+              key={link.label}
+              href={`/#${link.sectionId}`}
+              className="navbar__link"
+              onClick={(event) => {
+                event.preventDefault();
+                goToSection(link.sectionId);
+              }}
+            >
               {link.label}
             </a>
           ))}
@@ -87,9 +112,13 @@ const Navbar = () => {
         {LINKS.map((link) => (
           <a
             key={link.label}
-            href={link.href}
+            href={`/#${link.sectionId}`}
             className="navbar__menu-link"
-            onClick={handleClose}
+            onClick={(event) => {
+              event.preventDefault();
+              goToSection(link.sectionId);
+              handleClose();
+            }}
           >
             {link.label}
           </a>

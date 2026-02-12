@@ -77,7 +77,7 @@ export default function QuoteModal({ open, onClose }) {
     }
 
     const subject = encodeURIComponent("WATECH Quote Request");
-    window.location.href = `mailto:femijude10@gmail.com?subject=${subject}&body=${mailBody}`;
+    window.location.href = `mailto:watechlinks2003@gmail.com?subject=${subject}&body=${mailBody}`;
     setShowSuccess(true);
   };
 

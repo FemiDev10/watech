@@ -47,7 +47,7 @@ const FAQS = [
 const FaqAndNewsletter = () => {
   const [openIndex, setOpenIndex] = useState(0);
   const [showAll, setShowAll] = useState(false);
-  const [newsletterEmail, setNewsletterEmail] = useState("femijude10@gmail.com");
+  const [email, setEmail] = useState("");
   const [newsletterSuccess, setNewsletterSuccess] = useState(false);
 
   const handleToggle = (index) => {
@@ -140,14 +140,17 @@ const FaqAndNewsletter = () => {
               className="newsletter__input-wrap"
               onSubmit={(event) => {
                 event.preventDefault();
+                const subject = encodeURIComponent("WATECH Newsletter Subscription");
+                const body = encodeURIComponent(`Subscriber Email: ${email}`);
+                window.location.href = `mailto:watechlinks2003@gmail.com?subject=${subject}&body=${body}`;
                 setNewsletterSuccess(true);
               }}
             >
               <input
                 type="email"
                 className="newsletter__input"
-                value={newsletterEmail}
-                onChange={(event) => setNewsletterEmail(event.target.value)}
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
                 placeholder="Enter your email..."
               />
               <button type="submit" className="newsletter__submit">
@@ -180,7 +183,7 @@ const FaqAndNewsletter = () => {
                 <span />
               </div>
               <h3>You&apos;re subscribed!</h3>
-              <p>Updates will be sent to femijude10@gmail.com</p>
+              <p>Updates will be sent to watechlinks2003@gmail.com</p>
             </motion.div>
           </motion.div>
         ) : null}

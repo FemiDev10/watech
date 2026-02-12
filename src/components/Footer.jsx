@@ -20,60 +20,47 @@ const Footer = () => {
           </div>
 
           <div className="footer__col">
-            <h4 className="footer__heading">Quick Links</h4>
-            <ul className="footer__links">
-              <li>
-                <a href="#hero" className="footer__link">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="footer__link">
-                  Services
-                </a>
-              </li>
-              <li>
-                <a href="#systems" className="footer__link">
-                  Systems
-                </a>
-              </li>
-              <li>
-                <a href="#capabilities" className="footer__link">
-                  Capabilities
-                </a>
-              </li>
-              <li>
-                <a href="/contact" className="footer__link">
-                  Contact Us
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div className="footer__col">
-            <h4 className="footer__heading">Company Info</h4>
+            <h4 className="footer__heading">Head Office</h4>
             <div className="footer__info">
               <div className="footer__info-block">
-                <span className="footer__label">Head Office</span>
-                <span>29 Unity Road, Lagos Island, Lagos.</span>
-              </div>
-              <div className="footer__info-block">
-                <span className="footer__label">Branch Office</span>
-                <span>15 Marine Drive, Port Harcourt, Rivers.</span>
-              </div>
-              <div className="footer__info-block">
-                <span className="footer__label">Email Address</span>
-                <span>info@watechlinks.com</span>
-              </div>
-              <div className="footer__info-block">
-                <span className="footer__label">Phone Number</span>
-                <span>+234 801 234 5678, +234 812 345 6789</span>
+                <span>WATECH LINKS LIMITED</span>
+                <span>No. 20 Ede Street</span>
+                <span>Ogbum-Na-Abali</span>
+                <span>Port Harcourt, Nigeria</span>
               </div>
             </div>
           </div>
 
           <div className="footer__col">
-            <h4 className="footer__heading">Follow Us</h4>
+            <h4 className="footer__heading">Branch Office</h4>
+            <div className="footer__info">
+              <div className="footer__info-block">
+                <span>No. 1 Conoil Service Center</span>
+                <span>Amadi-Ama</span>
+                <span>Port Harcourt, Nigeria</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="footer__col">
+            <h4 className="footer__heading">Contact</h4>
+            <div className="footer__info">
+              <div className="footer__info-block">
+                <span className="footer__label">Phone</span>
+                <a href="tel:08030948732" className="footer__link">
+                  080 3094 8732
+                </a>
+                <a href="tel:08027448781" className="footer__link">
+                  080 2744 8781
+                </a>
+              </div>
+              <div className="footer__info-block">
+                <span className="footer__label">Email</span>
+                <a href="mailto:watechlinks2003@gmail.com" className="footer__link">
+                  watechlinks2003@gmail.com
+                </a>
+              </div>
+            </div>
             <div className="footer__socials">
               <img src={instagram} alt="Instagram" className="footer__icon" />
               <img src={facebook} alt="Facebook" className="footer__icon" />

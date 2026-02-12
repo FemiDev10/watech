@@ -111,20 +111,17 @@ const ContactPage = () => {
                 <h3>Contact Information</h3>
                 <div className="contact-page__info">
                   <div>
-                    <span>Phone</span>
-                    <strong>080 3094 8732</strong>
+                    <span>Head Office</span>
+                    <strong>WATECH LINKS LIMITED</strong>
+                    <strong>No. 20 Ede Street</strong>
+                    <strong>Ogbum-Na-Abali</strong>
+                    <strong>Port Harcourt, Nigeria</strong>
                   </div>
                   <div>
-                    <span>Phone 2</span>
-                    <strong>080 2744 8781</strong>
-                  </div>
-                  <div>
-                    <span>Email</span>
-                    <strong>watechlinks2003@gmail.com</strong>
-                  </div>
-                  <div>
-                    <span>WhatsApp</span>
-                    <strong>080 3094 8732</strong>
+                    <span>Branch Office</span>
+                    <strong>No. 1 Conoil Service Center</strong>
+                    <strong>Amadi-Ama</strong>
+                    <strong>Port Harcourt, Nigeria</strong>
                   </div>
                 </div>
               </section>

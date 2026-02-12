@@ -238,6 +238,7 @@
 }
 
 .contact-page__info strong {
+  display: block;
   color: #111111;
   font-weight: 600;
 }

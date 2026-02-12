@@ -17,6 +17,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import QuotePage from "./pages/QuotePage/QuotePage";
 import ContactPage from "./pages/ContactPage/ContactPage";
 import FacilitiesPage from "./pages/FacilitiesPage/FacilitiesPage";
+import WorkPage from "./pages/WorkPage/WorkPage";
 
 export default function App() {
   const [showLoader, setShowLoader] = useState(true);
@@ -65,6 +66,7 @@ export default function App() {
             <Route path="/quote" element={<QuotePage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/facilities" element={<FacilitiesPage />} />
+            <Route path="/work" element={<WorkPage />} />
           </Routes>
         </>
       )}
